@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+
+    <h1>Code Quiz</h1>
+
+    <form action="/action_page.php">
+      <label for="initials">Initials: </label>
+      <input type="text" id="initals" name="initials"><br><br>
+      
+      
+      <input type="submit" value="Submit">
+    </form>
+
+
+<div id="quiz"></div>
+<button id="submit">Get Results</button>
+<div id="results"></div>
+<ol>
+    <li>
+        setInterval
+    </li>
+</ol>
+<script src= "script.js"></script>
+<!-- Display the countdown timer in an element -->
+<p id="demo"></p>
+
+<script>
+// Set the time we're counting down to
+var countDownTime = new Time("60").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get time
+  var now = new Time().getTime();
+
+  // Find the distance between now and the count down time
+  var distance = countDownTime - now;
+
+  // Time calculations for  seconds
+ 
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML =  seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
